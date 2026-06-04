@@ -1,0 +1,236 @@
+<TITLE>Fault Tolerance</TITLE>
+<P>
+<h1>
+Fault-Tolerant Computing
+</h1>
+<BODY>
+<P>
+<b><font color="#0000F">Nian-Feng Tzeng </font></b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<br><br>
+<CENTER>
+<IMG ALIGN=TOP SRC="../images/rainbow.gif"> <br>
+</CENTER>
+<br>
+<P>
+A large parallel system demands high reliability,
+but the probability of faults occurring in a system grows as its size increases.
+Reconfiguring a faulty system to get around the faults is a viable approach
+to reliability enhancement, since the system may continue operation
+after reconfiguration.
+Reconfiguration in faulty hypercubes and meshes,
+as well as recovery point selection, have been pursued.
+One key issue in parallel systems is the fault-tolerant organization and
+architecture design of the systems.
+Various fault-tolerant architectures for parallel machine construction
+have been considered.
+
+<ul>
+<li><font size="+1" color="#ff0000"><i>Software-Based Reconfiguration and Fault Recovery</i></font> <br>
+
+A hypercube may operate in a gracefully degraded manner after faults arise,
+by supporting the execution of parallel algorithms in smaller fault-free subcubes.
+An efficient procedure capable of determining all complete fault-free subcubes
+in a faulty hypercube has been introduced,
+based on interesting properties of faulty hypercubes
+to exhibit empirically polynomial time complexity.
+It can deal with node failures and link failures uniformly and equally efficiently.
+
+<P>
+Reconfiguring a faulty hypercube with an effort to keep as many
+fault-free nodes as possible has been treated for the first time by us.
+This often leads to an incomplete hypercube, whose size can be arbitrary
+and is often much larger than a reconfigured complete subcube.
+Different approaches to this maximum reconfiguration have been proposed.
+One approach is to identify maximum collections of complete subcubes of
+distinct sizes such that elements in each collection together
+form an incomplete cube.
+Another is able to recognize all maximum incomplete subcubes existing
+in a faulty hypercube, based on boolean expression manipulation.
+It is confirmed by fault simulation that thess proposed approaches
+indeed give rise to significantly larger reconfigured systems.
+Maximum reconfiguration of faulty meshes by retaining as many healthy nodes
+as possible has been considered as well.
+Such a reconfigured subsystem is convex so that a simple,
+deadlock-free routing algorithm exists in it.
+This reconfiguration is shown to require a channel width of two only,
+keeping hardware overhead low.
+
+<P>
+Rollback and recovery strategies have been widely used in several software
+systems to improve reliability through fault tolerance.
+Efficient solutions to the problem of selecting recovery points optimally
+have been developed, with time complexity of O(<i>N*N</i>),
+where <i>N</i> is the number of tasks
+(while previously reported procedures have exponential time requirements).
+These solutions are aimed at computation models in which task precedence
+has a tree structure and a task may fail due to the presence of faults.
+<br><br>
+
+<li><font size="+1" color="#ff0000"><i>Reliable System Architecture</i></font> <br>
+
+The cube-connected cycles (CCC) architecture is an attractive parallel
+computation network, because it is suitable for VLSI implementation while
+preserving all the desired features of hypercubes.
+Different fault-tolerant CCC structures have been proposed,
+which exhibit significant reliability improvement and compare favorably
+to earlier known designs.
+Reconfiguration processes in these structures are simple and
+can be performed in a distributed manner in response to operational faults.
+The layouts of these designs are discussed and their area overheads are
+small to moderate at most.
+
+<P>
+The butterfly distributed-memory system has a regular and simple interconnection
+pattern, making it suitable for VLSI/WSI implementation.
+Effective fault-tolerant techniques for butterfly distributed-memory systems
+have been introduced to ensure their rigid full butterfly structures
+in the presence of failures.
+The reliability and layout of these proposed designs are evaluated analytically,
+and they are shown to be superior to those of prior fault-tolerant approaches.
+<br><br>
+
+<li><font size="+1" color="#ff0000"><i>Fault-Tolerant Interconnections</i></font> <br>
+
+Multiprocessor design demands a suitable interconnection network.
+A conventional multisage interconnection network (MIN) has one single path
+between a pair of input-output pairs, and a failure at the network
+may render several outputs inaccessible from certain inputs,
+possibly exhibiting low reliability.
+One scheme has been introduced for a wide class of MINs to enhance
+their reliability values by producing multiple paths between
+every input-output pair.
+The scheme connects switching elements within the same stage together,
+requiring a simple self-routing algorithm and making the network
+more robust as its size grows.
+An reliability analysis reveals that this fault-tolerant scheme
+leads to higher reliability improvement than other methods.
+
+<P>
+The Gamma interconnection network (GIN) is composed of 3 <i>x</i> 3 switches.
+We considered modifications to the GIN by altering the interconnection patterns
+between stages so as to create disjoint paths between every input-output pair,
+arriving at high terminal reliability.
+A modified GIN maintains the same routing complexity but enjoys a lower
+layout area and pin count, leading to potential cost reduction.
+It is shown that a modified GIN presents dramatic reliability improvement and
+possesses virtually identical communication performance as the original GIN.
+
+
+</ul>
+<br>
+This work was supported in part by National Science Foundation
+under Grants
+<a href = "https://www.fastlane.nsf.gov/servlet/showaward?award=8807761">
+MIP-8807761</a>,
+<a href = "https://www.fastlane.nsf.gov/servlet/showaward?award=9201308">
+MIP-9201308</a>, and
+<a href = "https://www.fastlane.nsf.gov/servlet/showaward?award=9300075">
+CCR-9300075</a>, and in part by
+the Board of Regents, State of Louisiana under Contracts
+No. LEQSF(1992-94)-RD-A-32 and No. LEQSF(1993-95)-RD-A-35.
+
+</UL>
+<br>
+
+<A HREF="./fault_tol.html"> <IMG SRC="../images/up_motif.gif">
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+<HR>
+
+<br>
+<H2>Publications</H2>
+<UL>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> Distributed Identification of All Maximal Incomplete Subcubes in a Faulty Hypercube</b>,
+	<i> Proc. 8th Int'l Parallel Processing Symposium</i>, April 1994, pp. 723-728.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/ipps_94.pdf">
+    PDF</A> (512K).  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> Subcube Determination in Faulty Hypercubes</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 46, pp. 871-879, August 1997.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0897.pdf">
+    PDF</A> (221K).  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> A Boolean Expression-Based Approach for Maximum Incomplete Subcube Identification in Faulty Hypercubes</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 8, pp. 1171-1183, November 1997.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_1197.pdf">
+    PDF</A> (260K).  <P>
+
+<li>S. Mishra, V. Raghavan, and N.-F. Tzeng,
+    <b> Efficient Algorithms for Selection of Recovery Points in Tree Task Models</b>,
+	<i> IEEE Transactions on Software Engineering</i>, vol. 17, pp. 731-734, July 1991.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tse_0791.pdf">
+    PDF</A> (330K).  <P>
+
+<li>N.-F. Tzeng and P. Chuang,
+    <b> A Pairwise Substitutional Fault Tolerance Technique for the Cube-Connected Cycles Architecture</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 5, pp. 433-439, April 1994.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0494.pdf">
+    PDF</A> (638K).  <P>
+
+<li>N.-F. Tzeng, P. Chuang, and C. Wu,
+    <b> Creating Disjoint Paths in Gamma Interconnection Networks</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 42, pp. 1247-1252, October 1993.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_1093.pdf">
+    PDF</A> (605K).  <P>
+
+<li>N.-F. Tzeng,
+    <b> A Cube-Connected Cycles Architecture with High Reliability and Improved Performance</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 42, pp. 246-253, February 1993.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0293.pdf">
+    PDF</A> (697K).  <P>
+
+<li>N.-F. Tzeng,
+    <b> Reconfiguration and Analysis of a Fault-Tolerant Circular Butterfly Parallel System</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 4, pp. 855-863, August 1993.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0893.pdf">
+    PDF</A> (870K).  <P>
+
+<li>N.-F. Tzeng,
+    <b> A Reliable Cube-Connected Cycles Structure</b>,
+ 	<i> Journal of Parallel and Distributed Computing</i>, vol. 19, pp. 64-71, September 1993.  <P>
+
+<li>N.-F. Tzeng,
+    <b> Reliable Butterfly Distributed-Memory Multiprocessors</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 43, pp. 1004-1013, September 1994.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0994.pdf">
+    PDF</A> (868K).  <P>
+
+<li>N.-F. Tzeng and G. Lin,
+    <b> Efficient Determination of Maximum Incomplete Subcubes in Hypercubes with Faults</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 45, pp. 1303-1308, March 1997.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0397.pdf">
+    PDF</A> (86K).  <P>
+
+<li>N.-F. Tzeng and G. Lin,
+    <b> Maximum Reconfiguration of 2-D Mesh Systems with Faults</b>,
+	<i> Proc. 1996 Int'l Conference on Parallel Processing</i>, August 1996, vol. I, pp. 77-84.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icpp_96.pdf">
+    PDF</A> (703K).  <P>
+
+<li> N.-F. Tzeng, P. Yew, and C. Zhu,
+    <b> Realizing Fault-Tolerant Interconnection Networks Via Chaining</b>,
+	<i> IEEE Transactions on Computers</i>, special issue on fault-tolerant computing, vol. 37, pp. 458-462, April 1988.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0488.pdf">
+    PDF</A> (557K).  <P>
+
+</UL>
+
+<HR>
+
+<A HREF="./fault_tol.html"> <IMG SRC="../images/up_motif.gif">
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+</P>
+</BODY>
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>
+

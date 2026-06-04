@@ -1,0 +1,165 @@
+<TITLE>Cluster Computing</TITLE>
+<P>
+<h1>
+Grid and Cluster Computing
+</h1>
+<BODY>
+<P>
+<b><font color="#0000F">Nian-Feng Tzeng</font></b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<br><br>
+<CENTER>
+<IMG ALIGN=TOP SRC="../images/rainbow.gif"> <br>
+</CENTER>
+<br>
+<P>
+<h2>
+Grid Computing
+</h2>
+With large-scale resource sharing, grid computing has changed the way we handle computation and data storage, potentially enabling us to better tackle computationally intensive tasks and storage-demanding applications.
+A computational grid often consists of diverse resources aggregated together, and it naturally faces various technical challenges, including resource tracking and management, job assighments and task migration, security, and user interfaces & tools.
+We have dealt with real-time job scheduling and effective resource tracking & management for grid computing.
+Checkpointing and task migration in computational grids are being investigated.
+<br><br><br>
+
+<h2>
+Cluster Computing
+</h2>
+<P>
+Networks of workstations (NOWs) and massively parallel processor (MPP) systems
+are popular platforms for cluster computing.  They mostly belong to the class
+of distributed memory machines.
+Distributed Shared Memory (DSM) Systems build the shared memory abstract on top of the distributed memory machines, such that the users
+have a shared-memory environment while message passing are taken care of
+by the DSM layer.
+Performance and reliability improvement of software DSM on NOWs and MPP
+systems for cluster computing has been investigated.
+<br><br>
+<UL>
+<li><font size="+1" color="#ff0000"><i>Software DSM Performance Improvement</i></font> <br>
+Software DSM performance is particularly sensitive to message communication
+overhead incurred for memory coherence enforcement.
+An aggressive release consistency method was considered to reduce this overhead.
+It was found to achieve considerable overhead reduction through a real
+implementation of the considered method on the TreadMarks framework for
+detailed and thorough evaluation under different applications.
+The synchronization mechanism is used for protecting the shared variables
+from <em>data race</em> situation, which leads to an unpredictable result
+due to multiple accesses. 
+Since performance of DSM is based on the number of messages exchanged
+during the runtime and synchronization mechanism is accounted for
+most of the messages, efficient synchronization mechanisms
+help further overall performance, as revealed and detailed in our studies.
+<P>
+In order to observe the actual behaviors of our proposed
+synchronization techniques, we used NOWs and an MPP system as the platforms
+for our experiments. NOWs employed for study are housed in the
+<a href="../lab.html"> CAN</a> Lab.
+The MPP system used in our works is the IBM SP machine provided by
+Mathematics and Computer Science Division at Argonne National Laboratory</a>.
+<P>
+<li><font size="+1" color="#ff0000"><i>Recoverable Software DSM</i></font> <br>
+While software DSM continues to improve its performance and scalability,
+the probability of system failures increases as its size grows.
+It is highly desirable to develop effective mechanisms for supporting
+fast crash recovery from node failures, giving rise to recoverable software DSM.
+We have proposed efficient logging and recovery protocols for software DSM,
+such that they incur negligible overhead during fault-free execution
+while shortening the recovery time significantly after failures arise.
+<P>
+A new and efficient coordinated checkpointing technique was introduced for
+software DSM, in order to minimize both the checkpointing overhead during
+failure-free execution, and the cost of recovery from failures.
+This is realized by leveraging existing coherence information maintained by
+software DSM, so as to allow failure recovery from the most recent checkpoint,
+saving the re-computation time.
+Performance experiments on NOWs with the introduced technique incorporated
+into the TreadMarks framework have demonstrated its ability in consistently
+outperforming other checkpointing and fault recovery approaches.
+</UL>
+<BR>
+<H2>Publications</H2>
+<UL>
+<LI>A. Kongmunvattana, S. Tanchatchawal, and N.-F. Tzeng, <b>Coherence-Based Coordinated Checkpointing for Software Distributed Shared Memory Systems</b>,
+	<I>Proc. 20th Int'l Conference on Distributed Computing Systems (ICDCS 2000)</I>, Apr. 2000, pp. 556-563.
+    <A HREF="http://www.computer.org/conferen/proceed/icdcs/0601/06010556abs.htm">
+    Abstract</A>,
+    <A HREF="../publications/papers/icdcs_00.pdf"> PDF</A> (87K).
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Logging and Recovery in Adaptive Software Distributed Shared Memory Systems</b>,
+	<I>Proc. 18th IEEE Symposium on Reliable Distributed Systems (SRDS)</I>, Oct. 1999, pp. 202-211.
+    <A HREF="http://www.computer.org/conferen/proceed/srds/0290/02900202abs.htm">
+    Abstract</A>,
+    <A HREF="../publications/papers/srds_99.pdf"> PDF</A> (113K).
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Coherence-Centric Logging and Recovery for Home-Based Software Distributed Shared Memory</b>,
+	<I>Proc. 1999 Int'l Conference on Parallel Processing (ICPP '99)</I>, Sept. 1999, pp. 274-281.
+    <A HREF="http://www.computer.org/conferen/proceed/icpp/0350/03500274abs.htm">
+    Abstract</A>,
+    <A HREF="../publications/papers/icpp_99.pdf"> PDF</A> (96K).
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Lazy Logging and Prefetch-Based Crash Recovery in Software Distributed Shared Memory Systems</b>,
+	<I>Proc. 13th Int'l Parallel Processing Symposium  (IPPS '99)</I>, Apr. 1999, pp. 399-406.
+    <A HREF="http://computer.org/conferen/proceed/ipps/0143/01430399abs.htm">
+    Abstract</A>,
+    <A HREF="../publications/papers/ipps_99.pdf"> PDF</A> (123K).
+<P>
+<LI>N.-F. Tzeng and A. Kongmunvattana, <b>Distributed Shared Memory Systems with Improved Barrier Synchronization and Data Transfer</b>,
+	<I>Proc. 11th ACM Int'l Conference on Supercomputing (ICS)</I>, July 1997, pp. 148-155.
+    <A HREF="../publications/abstracts/ics97.html">
+    Abstract</A>,
+    <A HREF="../publications/papers/ics_97.pdf.gz">
+	Compressed PDF</A> (1.1M).
+<P>
+<LI>S. S. Fu and N.-F. Tzeng,
+    <B>Aggressive Release Consistency for Software Distributed Shared
+       Memory</B>,
+       <I>Proc. 17th Int'l Conference on Distributed Computing Systems</I>, May 1997, pp. 288-295.
+    <A HREF="../publications/abstracts/icdcs97.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/icdcs_97.ps.Z">
+    Compressed Postscript</A> (101K).
+<P>
+<LI>S. S. Fu, N.-F. Tzeng, and Z. Li,
+    <B>Empirical Evaluation of Distributed Mutual Exclusion Algorithms</B>,
+       <I>Proc. 11th Int'l Parallel Processing Symposium</I>, April 1997, pp. 255-259.
+    <A HREF="../publications/abstracts/ipps97.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/ipps_97.ps.gz">
+    Compressed Postscript</A> (60K).
+<P>
+<LI>S. S. Fu and N.-F. Tzeng,
+    <B>Lock Improvement Technique for Release Consistency in Distributed
+       Shared Memory Systems</B>,
+       <I>Proc. 6th Symposium on the Frontiers
+       of Massively Parallel Computation</I>, October 1996, pp. 255-262.
+    <A HREF="../publications/abstracts/frontiers96.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/frontier_96.ps.gz">
+    Compressed Postscript</A> (55K).
+</UL>
+<BR>
+<P>
+<h2>Funding</h2>
+<UL>
+<LI>National Science Foundation under Grants 
+<a href= "https://www.fastlane.nsf.gov/servlet/showaward?award=9201308">MIP-9201308</a>,
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=9803505">CCR-9803505</a>, and
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=9871315">EIA-9871315</a>.
+<LI>Board of Regents, State of Louisiana under Contract No. LEQSF(1998-99)-ENH-TR-101.
+</UL>
+<HR>
+
+<A HREF="./cluster.html"> <IMG SRC="../images/up_motif.gif"> </A>
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+</BODY>
+
+<br><br>
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>
+

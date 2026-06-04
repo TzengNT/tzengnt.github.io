@@ -1,0 +1,152 @@
+<TITLE>Computer</TITLE>
+<P>
+<h1>
+High-Performance Computer Systems
+</h1>
+<BODY>
+<P>
+<b><font color="#0000F">Nian-Feng Tzeng</font></b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<br><br>
+<CENTER>
+<IMG ALIGN=TOP SRC="../images/rainbow.gif"> <br>
+</CENTER>
+<br>
+<P>
+The performance of a shared-memory multiprocessor is dictated in part by the
+latency of fetching global memory locations through the interconnection network.
+We investigated techniques to improve access latency
+under various traffic patterns in multiprocessors.
+The use of locks for critical sections is fundamental in parallel execution
+and efficient lock implementation makes it possible to build scalable,
+high-performance parallel systems.
+Lock mechanisms for shared-memory machines and distributed-memory machines
+have been considered, as an efficient lock makes it feasible to
+construct DSM systems on top of the distributed-memory machines,
+by enforcing data coherence
+without high overhead to ensure good performance. 
+
+<br><br>
+<UL>
+<li><font size="+1" color="#ff0000"><i>Communication Improvement</i></font> <br>
+One of the essential issues in developing large-scale shared-memory
+multiprocessors is to deal with hot spots, i.e., when a large number of
+processors attempt to access a common location, a significant delay results
+due to tree saturation developed in the interconnection network.
+An inexpensive software combining technique has been developed as an alternative
+to its expensive hardware counterpart by distributing hot-spot accesses
+over a software tree whose nodes are dispersed over many memory modules,
+effectively decreasing access contention
+to substantial overall performance improvement.
+<P>
+A cost-effective combining structure for large-scale multiprocessors is
+realized by making use of the idea that the combining function
+is separated from the routing function,
+so that a binary tree-based combining configuration becomes feasible.
+With a considerably lower cost, this considered combining structure
+is readily suitable for use in applications where hot-spot traffic
+can be differentiated from regular traffic at run time.
+An approach that provides good performance regardless of
+whether hotspot requests are combinable, is also proposed.
+It is based on multi-queues at network primary inputs and
+at switch inputs, which share a fixed amount of storage allocated
+such that each queue is given a slot permanently and
+also shares available storage with other queues in a switch dynamically.
+This design improves network bandwidth in the absence of hotspots
+and indeed alleviates the impact of tree saturation on regular requests.
+<P>
+<li><font size="+1" color="#ff0000"><i>Synchronization and Performance Assessment</i></font> <br>
+Implementing mutual exclusion in large-scale shared-memory multiprocessors
+requires the use of a lock in global memory, through which synchronization
+and data exchange are carried out.
+An effective lock implementation reduces the access latency of shared data
+and synchronization overhead, crucial to the performance of parallel execution.
+An efficient lock scheme for multiprocessors interconnected by
+the multistage interconnection network has been introduced.
+It keeps synchronization traffic low and avoids serious hot-spot contention,
+reducing the latency of access to the lock.
+This is made possible by constructing a ring of the processors waiting for
+the critical section and by dispersing accesses to the lock.
+<P>
+Distributed-memory systems needs the use of locks for realizing synchronization
+during parallel program executions; for example, the barrier synchronization.
+When a distributed shared memory system is constructed on a distributed-memory
+machine, the data coherence is commonly enforced through
+mutual exclusion on the data cache lines of processors.
+An approach to mutual exclusion in the distributed memory system
+has been considered so that processors waiting for the critical section
+will get the permission quickly with as few message exchanges as possible,
+often exhibiting better performance than prior algorithms.
+It results in deadlock- and starvation-freeness naturally,
+and presents simple fault recovery without employing any time-out mechanism.
+<P>
+For a parallel machine, system performance tends to be in proportion to
+the computation power, which in turn is proportional to the system size.
+We measured the execution behaviors of four applications on
+a reconfigured incomplete subcube using the Intel <i>iPSC#/860</i>.
+This is the first experimental study of incomplete hypercubes.
+Each application is mapped onto the incomplete hypercube,
+with load balance and minimum communication overhead in mind.
+
+</UL>
+<BR>
+<H2>Publications</H2>
+<UL>
+<LI>S. S. Fu and N.-F. Tzeng,
+    <b> A Circular List-Based Mutual Exclusion Scheme for Large Shared-Memory Multiprocessors</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 8, pp. 628-639, June 1997,
+<A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0697.pdf">  PDF</A> (327K).  <P>
+
+<LI>G. Lin and N.-F. Tzeng,
+    <b> Effective Utilization of Hypercubes in the Presence of Faults</b>,
+	<i> Journal of Parallel and Distributed Computing</i>, vol. 32, pp. 223-231, February 1996.  <P>
+
+<LI>N.-F. Tzeng,
+    <b> Alleviating the Impact of Tree Saturation on Multistage Interconnection Network Performance</b>,
+	<i> Journal of Parallel and Distributed Computing</i>, pp. 107-117, June 1991.  <P>
+
+<LI>N.-F. Tzeng,
+    <b> A Cost-Effective Combining Structure for Large-Scale Shared-Memory Multiprocessors</b>,
+ 	<i> IEEE Transactions on Computers</i>,  vol. 41, pp. 1420-1429, November 1992,
+<A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_1192.pdf"
+>  PDF</A> (959K). <P>
+
+<li>N.-F. Tzeng and S. S. Fu,
+    <b> Efficient Implementation of Mutual Exclusion Locks in Large Multiprocessors</b>,
+	<i> Proc. 9th Int'l Parallel Processing Symposium</i>, April 1995, pp. 270-275,
+<A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/ipps_95a.pdf"
+>  PDF</A> (567K). <P>
+
+<li>N.-F. Tzeng and P.-C. Yew,
+    <b> Special Issue on Distributed Shared Memory Systems: Guest Editors' Introduction</b>,
+	<i> Journal of Parallel and Distributed Computing</i>, vol. 29, pp. 105-107, September 1995.  <P>
+
+<LI>P.-C. Yew, N.-F. Tzeng, and D. H. Lawrie,
+    <b> Distributing Hot-Spot Addressing in Large-Scale Multiprocessors</b>,
+ 	<i> IEEE Transactions on Computers</i>, vol. C-36, pp. 388-395, April 1987.  <P>
+
+
+</UL>
+<BR>
+<P>
+<h2>Funding</h2>
+<UL>
+<LI>National Science Foundation under Grants
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=9201308">MIP-9201308</a> and
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=9300075">CCR-9300075</a>.
+<LI>Board of Regents, State of Louisiana under Contracts No. LEQSF(1992-94)-RD-A-32 and No. LEQSF(1993-95)-RD-A-35.
+</UL>
+<HR>
+
+<A HREF="./computer.html"> <IMG SRC="../images/up_motif.gif"> </A>
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+<P>
+</BODY>
+
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>
+

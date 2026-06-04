@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>ABSTRACT</TITLE>
+</HEAD>
+<h1>Empirical Evaluation of Distributed Mutual Exclusion Algorithms</h1>
+<BODY>
+<P>
+Abstract -- Mutual exclusion in distributed memory systems is realized by
+passing messages among sites to establish a sequence for the waiting sites
+to enter the critical section. In this paper, we evaluated various
+distributed mutual exclusion algorithms on the IBM SP2 machine and the
+Intel iPSC/860 system. The empirical results are compared in terms of such
+criteria as the number of message exchanges and the response time. Our
+results indicate that the Star algorithm [8] achieves the shortest response
+time in most cases among all the algorithms on a small to medium sized system,
+when processors request for the critical section many times before involving
+any barrier synchronization. This is because (1) it requires the exchange of
+no more than 3 messages per critical section entry, and (2) contention can
+quickly be alleviated after several entries into the critical section,
+if no barrier is involved in the meantime. On the other hand, if every
+processor enters the critical section only once before encountering a
+barrier, the improved Ring algorithm [10] is found to outperform others
+under a heavy load; but the Star algorithm and the CSL algorithm [9]
+prevail when the request rate becomes light. The best solution to mutual
+exclusion in distributed memory systems is determined by how
+participating sites generate their mutual exclusion requests.
+<P>
+Index Terms -- Critical sections, distributed-memory systems, logical rings,
+message exchanges, mutual exclusion, tokens.
+</BODY>
+</HTML>

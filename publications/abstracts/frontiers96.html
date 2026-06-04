@@ -1,0 +1,36 @@
+<html>
+<header>
+<title>Abstract</title>
+</header>
+<body>
+<center> 
+<H2>Lock Improvement Technique for Release Consistency in Distributed Shared Memory Systems</H2>
+<P>
+<H3>Shiwa S. Fu and Nian-Feng Tzeng</H2>
+<H3>Center for Advanced Computer Studies<br>
+    University of Southwestern Louisiana<br>
+    Lafayette, LA 70504<br></H2>
+</center> 
+
+<P>
+<B> Abstract </B>- Distributed shared memory allows processes to view the physically
+distributed memory as a globally shared virtual memory. Lazy release
+consistency (LRC), among known techniques, is an efficient software
+model proposed for distributed shared memory. It relies heavily on lock
+synchronization to maintain data coherency. The lock scheme used in LRC,
+however, conducts many interrupt invocations on the remote processors,
+which in turn steal effective cpu cycles from remote processors, thus
+prolonging the lock acquisition time and the total elapsed time of
+application programs. In this paper, a lock improvement technique is
+proposed to alleviate interrupt invocations caused by the lock acquire
+operations, leading to reduction in the lock acquisition time and the
+overall program execution time. Our improvement technique was evaluated
+under the TreadMarks' framework using four applications, where
+TreadMarks is a distributed shared memory system based on LRC. The
+experimental results indicate that our technique improves the lock
+acquisition time over TreadMarks on a network of workstations by more
+than 14% for one application.
+<P>
+
+</body>
+</html>

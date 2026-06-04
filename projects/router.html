@@ -1,0 +1,136 @@
+</HTML>
+<TITLE>High-Performance Routers</TITLE>
+<P>
+<h1>
+High-Performance Routers
+</h1>
+<BODY>
+<P>
+<b><font color="#0000F">Nian-Feng Tzeng </font></b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<BR><BR>
+<CENTER>
+<IMG align=CENTER SRC="../images/rainbow.gif"><BR><BR>
+</CENTER>
+<br>
+<P>
+Existing or earlier proposed routers often lacks scalability because
+they utilize a shared backplane bus or crossbar to interconnect
+line cards (LC's) and forwarding engines (FE's).
+Their packet classification mechanisms could easily become performance
+bottlenecks, as the router's speed increases or the routing/filter table
+sizes grow.  This project investigates router architecture with
+good scalability and capable of forwarding hundreds of millions of
+packets per second, in order to keep up with future transmission technologies.
+It aims to help advance the state-of-the-art of router design and
+to enable large networking configurations.
+<P>
+Current routers rely on enhanced software search algorithms or specific
+hardware support to meet the IP address lookup rate (of up to 5 million
+lookups per second per lookup unit), but a future high-speed network
+calls for routers with aggregate lookup rates of some two orders of
+magnitude higher than a lookup unit presently can offer.
+Hardware-assisted mechanisms for fast packet forwarding appear promising.
+In particular, the use of caches to hold lookup results can fulfill subsequent
+lookup requests for identical destinations immediately without resorting
+to FE's for lookups, reducing the mean lookup latency
+tremendously.
+Unlike other software- or hardware-based forwarding improvement approaches,
+our hardware-assisted mechanisms can be effectively applicable to
+both IPv6 and IPv4, ideally suitable for scalable high-performance routers.
+<P>
+This work has been carried out in the
+Computer Architecture and Networks Laboratory (CAN) Lab, which houses
+a wide range of computers and communication gear. 
+Please visit <a href="../lab.html">Computer Architecture and Networks Laboratory</a> for more details.
+<P>
+<BR>
+<H2>Publications</H2>
+<UL>
+
+<LI>N-F. Tzeng,
+<b>Multistage-Based Switching Fabrics for Scalable Routers</b>,
+<I>to appear in IEEE Transactions on Parallel and Distributed Systems</I>, April 2004.
+
+<P>
+<LI>N-F. Tzeng,
+<b>SPAL: Speedy Packet Lookups under Distributed Router Architecture</b>,
+<I>submitted for possible presentation</I>.
+
+<P>
+<LI>N-F. Tzeng,
+<b>Hardware-Assisted Design for Fast Packet Forwarding in Parallel Routers</b>,
+<I>Proc. 2003 Int'l Conference on Parallel Processing,</I> Oct. 2003, pp. 11-18.
+<A HREF="http://csdl.computer.org/comp/proceedings/icpp/2003/2017/00/20170011abs.htm"> Abstract</A>,
+<A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icpp_03.pdf">
+PDF</A> (387K).
+
+<P>
+<LI>N-F. Tzeng and M. Mandviwalla,
+<b>Performance Evaluation of Router Switching Fabrics</b>,
+<I>Proc. 9th IEEE Int'l Conference on Parallel and Distributed Systems</I>,
+December 2002, pp. 542-547.
+<A HREF="http://www.computer.org/proceedings/icpads/1760/17600542abs.htm">
+Abstract</A>,
+<A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icpads_02.pdf">
+PDF</A> (282K).
+<P>
+<LI>N-F. Tzeng and R. Batchu,
+<b>Design and Evaluation of Scalable Switching Fabrics for High-Performance Routers</b>,
+<I>Proc. 31st Int'l Conference on Parallel Processing</I>,
+August 2002, pp. 167-174.
+<A HREF="http://www.computer.org/proceedings/icpp/1677/16770167abs.htm">
+    Abstract</A>,
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icpp_02.pdf">
+    PDF</A> (521K).
+<P>
+<LI>N-F. Tzeng and M. Mandviwalla,
+<b>Cost-Effective Switching Fabrics with Distributed Control for Scalable Routers</b>,
+<I>Proc. 22nd IEEE Int'l Conference on Distributed Computing Systems</I>,
+July 2002, pp. 65-73.
+    <A HREF="http://www.computer.org/proceedings/icdcs/1585/15850065abs.htm">
+    Abstract</A>,
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icdcs_02.pdf">
+    PDF</A> (513K).
+<P>
+<LI>K. Vibhatavanij, N-F. Tzeng, and A. Kongmunvattana,
+<b>Simultaneous Multithreading-Based Routers</b>,
+	<I>Proc. 29th Int'l Conference on Parallel Processing (ICPP '00)</I>,
+Aug. 2000, pp. 362-369.
+    <A HREF="http://computer.org/proceedings/icpp/0768/07680362abs.htm">
+    Abstract</A>,
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icpp_00.pdf">
+    PDF</A> (738K).
+<P>
+<LI>N.-F. Tzeng, K. Ponnuru, and K. Vibhatavanij,
+    <B>A Cost-Effective Design for ATM Switching Fabrics</B>,
+       <I>Proc. 1999 IEEE Int'l Conference on Communications (ICC '99)</I>, June 1999, pp. S37.4.1-5.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/abstracts/icc99.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icc_99.pdf.gz">
+    Compressed PDF </A> (81K).
+
+</UL>
+<BR>
+<P>
+<h2>Funding</h2>
+<UL>
+<LI>National Science Foundation under Grants
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=9871315">EIA-9871315</a> and 
+<a href="https://www.fastlane.nsf.gov/servlet/showaward?award=0105529">CCR-0105529</a>.
+<LI>U.S. Army Research Office via Grant/Cooperative Agreement No. DAAG55-98-1-0240.
+<LI>Board of Regents, State of Louisiana under Contracts No. DOD/LEQSF(1997-01)-06, No. LEQSF(1998-99)-ENH-TR-101, and No. LEQSF(2000-01)-ENH-TR90.
+</UL>
+<HR>
+
+<A HREF="./router.html"> <IMG SRC="../images/up_motif.gif"> </A>
+<A HREF="./network.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+</P>
+</BODY>
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>

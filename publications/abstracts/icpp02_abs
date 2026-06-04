@@ -1,0 +1,20 @@
+Title:  Design and Evaluation of Scalable Switching Fabrics for High-Performance Routers
+
+
+Center for Advanced Computer Studies
+University of Louisiana at Lafayette
+Lafayette, LA  70504, USA
+
+
+Authors: Nian-Feng Tzeng  and  Ravi C. Batchu
+
+	Center for Advanced Computer Studies
+	University of Louisiana at Lafayette
+	Lafayette, LA  70504, USA
+
+
+Abstract
+
+This work considers switching fabrics with distributed packet routing to achieve high scalability and low costs.  The considered switching fabrics are based on a multistage structure with different re-circulation designs, where adjacent stages are interconnected according to the indirect n-cube connection style.  They all compare favorably with an earlier multistage-based counterpart according to extensive simulation, in terms of performance measures of interest and hardware complexity.  When queues are incorporated in the output ports of switching elements (SE’s), the total number of stages required in our proposed fabrics to reach a given performance level can be reduced substantially.  The performance of those fabrics with output queues is evaluated under different “speedups” of the queues, where the speedup is the operating clock rate ratio of that at the SE core to that over external links.  Our simulation reveals that a small speedup of 2 is adequate for buffered switching fabrics comprising 4?8 SE’s to deliver better performance than their unbuffered counterparts with 50% more stages of SE’s, when the fabric size is 256.  The buffered switching fabrics under our consideration are scalable and of low costs, ideally suitable for constructing high-performance routers with large numbers of line cards.
+
+

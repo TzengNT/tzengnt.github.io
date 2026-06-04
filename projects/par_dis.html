@@ -1,0 +1,278 @@
+<TITLE>Parallel and Distributed Processing</TITLE>
+<P>
+<h1>
+Parallel and Distributed Processing
+</h1>
+<BODY>
+<P>
+<b><font color="#0000F">Nian-Feng Tzeng </font></b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<br><br>
+<CENTER>
+<IMG ALIGN=TOP SRC="../images/rainbow.gif"> <br>
+</CENTER>
+<br>
+<P>
+Several interesting topics in this area have been pursued,
+with a focus on hypercubes and meshes,
+which are among popular message-passing architectures.
+Parallel machines based on the hypercube and the mesh topologies have been
+available commercially, and they exhibit a high potential for
+the parallel execution of various algorithms.  <br><br>
+
+<ul>
+<li><font size="+1" color="#ff0000"><i>Resource Allocation and Management</i></font> <br>
+
+Multiple tasks can be executed simultaneously in a given message-passing system.
+To achieve good performance, the system has to recognize efficiently
+free subsystems of various sizes for incoming tasks.
+A subcube allocation strategy, which has much lower complexity
+than known methods while still achieving complete subcube recognition,
+has been proposed.
+It can be implemented efficiently through simple operations,
+with its search space determined by both the hypercube dimension and
+the size of the subcube needed by an incoming task.
+
+<P>
+The mesh system is suitable for the parallel execution of various algorithms.
+A few schemes for recognizing submeshes in a mesh-connected system
+have been considered, but they either lead to low processor utilization
+(because of large internal fragmentation) or
+cannot apply to general mesh systems.
+An efficient submesh allocation technique able to
+recognize submeshes with arbitrary sizes has been devised to
+assign a submesh of the precise size to an incoming task.
+It leads to significant improved performance over
+the previous submesh allocation scheme,
+while maintaining reasonably low time complexity.
+
+<P>
+Multiple copies of a certain resource (e.g., I/O processors, disks,
+compilers, etc.) often exist in the distributed memory machine to
+reduce access contention at any shared copy of the resource.
+Placing multiple copies of a resource in the hypercube has been considered
+such that every cube node without the resource is adjacent to
+a specified number of resource copies using as few resource copies as possible.
+This placement guarantees the resource to be accessible from every node
+in one hop even after some resource copies are lost.
+The placement is done systematically for any hypercube,
+following the multiple-adjacency codes devised,
+particularly useful for large-scale hypercubes to yield lowest potential
+access contention for a given number of resource copies (i.e., cost).
+The locations to place resource copies are specified by the codewords of
+an appropriate multiple-adjacency linear code constructed according to
+the degree of adjacency and the hypercube dimension.
+
+<P>
+A performance measure of interest in resource placement is
+the <i>resource diameter</i>, which is defined as the maximum resource distance
+among all the nodes, with the resource distance of a node being the minimum
+number of hops from the node to a node equipped with a copy of the resource.
+Placing copies of a certain resource to cube nodes under the situations
+that the resource diameter is greater than 1 has been dealt with,
+with approaches based on the covering radius results of known codes to
+aid in constructing desired linear codes whose codewords address nodes
+at which resource copies are placed.
+They are applicable to any cube size systematically and
+achieve placement results better than what are derived by previous methods.
+<br><br>
+
+<li><font size="+1" color="#ff0000"><i>Incomplete Hypercubes</i></font> <br>
+
+The hypercube restricts its size rigidly to be a power of 2,
+leaving a large gap between consecutive allowable system sizes.
+A variant hypercube whose size can be arbitrary, called an
+<i>incomplete hypercube</i>, possesses many advantages of complete hypercubes.
+Traffic density over links in an incomplete hypercube has been analyzed under
+uniform message distributions and found to be bounded by a constant 2,
+independent of the system size and despite its structural non-homogeneity.
+This result is interesting because it implies that cube links can be easily
+constructed so as to avoid any single point of congestion,
+guaranteeing good performance.
+Incomplete hypercube performance was also evaluated by simulation
+under packet-switching and wormhole routing with the queueing delay
+taken into account.
+Simulation results indicate that mean latency for transmitting messages is
+roughly the same in an incomplete hypercube as
+in a compatible complete hypercube.
+
+<P>
+Embedding trees and grids in incomplete hypercubes was pursued as well.
+It is shown that better tree embedding results are often achievable in
+incomplete hypercubes than in compatible complete hypercubes.
+Likewise, superior embedding can be obtained in an incomplete hypercube
+than in its complete counterpart for an absolute majority of cases.
+Consequently, it is feasible and beneficial to reconfigure a faulty hypercube
+into an incomplete cube so as to retain as many healthy nodes as possible.
+The incomplete hypercube appears to be an attractive and practical topology.
+<br><br>
+
+<li><font size="+1" color="#ff0000"><i>Performance Improvement and Task Migration</i></font> <br>
+
+Techniques for improving the performance of complete and incomplete hypercubes
+by utilizing otherwise unused links have been investigated.
+They include how to maximize the improvement of the performance measure of
+interest when extra connections are made, under various traffic distributions.
+The performance measures of interest include diameter, mean internode distance,
+and traffic density over links.
+For a complete hypercube, it is found that optimal skips would be between
+pairs of closer nodes if the degree of reference locality increases.
+There are numerous ways to make extra connections in an incomplete hypercube
+using otherwise unused links to improve its performance.
+A particular way of establishing extra connections has been considered and
+evaluated such that interesting path characteristics result,
+making it possible to develop a simple routing algorithm
+which takes the most advantage of extra connections
+and yet prevents traffic congestion and deadlock from arising.
+
+<P>
+A hypercube system often supports multi-tasking,
+by which several independent jobs can be executed simultaneously,
+one is assigned with one subcube.
+After repeated subcube allocation and deallocation in a hypercube,
+fragmentation tends to develop and cannot be eliminated without
+<i>task migration</i>, which is a process for relocating active tasks
+by migrating them to respective target subcubes
+so as to create a large free subcube.
+Speedy task migration in a hypercube system has been investigated
+by making use of two disjoint paths for delivering migration messages
+concurrently between every pair of corresponding nodes.
+All migration paths selected are pairwise disjoint and contain no link
+of active subcubes, so that task migration can be performed quickly and
+without interrupting the execution of other jobs.
+A highly fragmented hypercube may require <i>compaction</i>,
+which moves active tasks to a specified area such that all free nodes are
+at a contiguous region ready for upcoming jobs.
+An approach for compaction in a hypercube has been considered by
+using <i>all</i> disjoint paths from a subcube to its target subcube
+so as to achieve compaction at the fastest pace.
+This way accomplishes compaction in a fraction of the time needed with single paths.
+
+</ul>
+<br>
+This work was supported in part by National Science Foundation
+under Grants
+<a href= "https://www.fastlane.nsf.gov/servlet/showaward?award=9201308"> MIP-9201308</a> and 
+<a href= "https://www.fastlane.nsf.gov/servlet/showaward?award=9300075">
+CCR-9300075</a>, and in part by
+the Board of Regents, State of Louisiana under Contracts
+No. LEQSF(1992-94)-RD-A-32 and No. LEQSF(1993-95)-RD-A-35.
+
+</UL>
+<br>
+
+<A HREF="./par_dis.html"> <IMG SRC="../images/up_motif.gif">
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+<HR>
+
+<br>
+<H2>Publications</H2>
+<UL>
+
+<li>P. Chuang and N.-F. Tzeng,
+    <b> A Fast Recognition-Complete Processor Allocation Strategy for Hypercube Computers</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 41, pp. 467-479, April 1992.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0492.pdf">
+    PDF</A> (1.1M).  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> Efficient Resource Placement in Hypercubes Using Multiple-Adjacency Codes</b>,
+   	<i> IEEE Transactions on Computers</i>, vol. 43, pp. 23-33, January 1994.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0194.pdf">
+    PDF</A> (981K).  <P>
+
+<li>P. Chuang and N.-F. Tzeng,
+    <b> Allocating Precise Submeshes in Mesh Connected Systems</b>,
+   	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 5, pp. 211-217, February 1994.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0294.pdf">
+    PDF</A> (757K).  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> Speedy Task Migration in Hypercube Systems</b>,
+	<i> Proc. 23rd Int'l Conference on Parallel Processing</i>, August 1994, vol. III, pp. 74-78.  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> Task Migration in Hypercubes Using All Disjoint Paths</b>,
+   	<i> Proc. 7th Int'l Conference on Parallel and Distributed Computing Systems</i>, October 1994, pp. 358-363.  <P>
+
+<li>H. Chen and N.-F. Tzeng,
+    <b> On-Line Task Migration in Hypercubes through Double Disjoint Paths</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 46, pp. 379-384, March 1997.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0397.pdf">
+    PDF</A> (86K).  <P>
+
+<li>N.-F. Tzeng, P. Chuang, and H. Chen,
+    <b> Embedding in Incomplete Hypercubes</b>,
+   	<i> Proc. 19th Int'l Conference on Parallel Processing</i>, August 1990, vol. III, pp. 335-339.  <P>
+
+<li>N.-F. Tzeng and H. Chen,
+    <b> An Effective Approach to the Enhancement of Incomplete Hypercubes</b>,
+	<i> Journal of  Parallel and Distributed Computing</i>, vol. 14, pp. 163-174, February 1992.  <P>
+
+<li>N.-F. Tzeng and H. Chen,
+    <b> Structural and Tree Embedding Aspects of Incomplete Hypercubes</b>,
+   	<i> IEEE Transactions on Computers</i>, vol. 43, pp. 1434-1439, December 1994.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_1294.pdf">
+    PDF</A> (601K).  <P>
+
+<li>N.-F. Tzeng and H. Chen,
+    <b> Fast Compaction in Hypercubes</b>,
+	<i> IEEE Transactions Parallel and Distributed Systems</i>, vol. 9, pp. 50-56, January 1998.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0198.pdf">
+    PDF</A> (230K).  <P>
+
+<li>N.-F. Tzeng,
+    <b> Structural Properties of Incomplete Hypercube Computers</b>,
+	<i> Proc. 10th IEEE Int'l Conference on Distributed Computing Systems</i>, May 1990, pp. 262-269.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/icdcs_90.pdf">
+    PDF</A> (660K).  <P>
+
+<li>N.-F. Tzeng,
+    <b> Empirical Evaluation of Incomplete Hypercube Systems</b>,
+	<i> Proc. 22nd Int'l Conference on Parallel Processing</i>, August 1993, vol. I, pp. 96-99.  <P>
+
+<li>N.-F. Tzeng and G. Feng,
+    <b> On Resource Allocation in Binary #n#-Cube Network Systems</b>,
+   	<i> Proc. 22nd Int'l Conference on Parallel Processing</i>, August 1993, vol. II, pp. 209-212.  <P>
+
+<li>N.-F. Tzeng and G. Feng,
+    <b> Resource Allocation in Cube Network Systems Based on the Covering Radius</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 7, pp. 328-342, April 1996.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0496.pdf">
+    PDF</A> (1.4M).  <P>
+
+<li> N.-F. Tzeng and H. Kumar,
+    <b> Analysis of Link Traffic in Incomplete Hypercubes</b>,
+   	<i> Proc. 5th IEEE Symposium on Parallel and Distributed Processing</i>, December 1993, pp. 312-319.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/papers/spdp_93.pdf">
+    PDF</A> (674K).  <P>
+
+<li>N.-F. Tzeng and H. Kumar,
+    <b> Traffic Analysis and Simulation Performance of Incomplete Hypercubes</b>,
+	<i> IEEE Transactions on Parallel and Distributed Systems</i>, vol. 7, pp. 740-754, July 1996.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tpds_0796.pdf">
+    PDF</A> (1.3M).  <P>
+
+<li>N.-F. Tzeng and S. Wei,
+    <b> Enhanced Hypercubes</b>,
+	<i> IEEE Transactions on Computers</i>, vol. 40, pp. 284-294, March 1991.
+    <A HREF="http://www.cacs.louisiana.edu/~tzeng/publications/journals/tc_0391.pdf">
+    PDF</A> (961K).  <P>
+
+</UL>
+
+<HR>
+
+<A HREF="./par_dis.html"> <IMG SRC="../images/up_motif.gif">
+<A HREF="../index.html"> <IMG SRC="../images/previous_motif.gif">  </A>
+
+</P>
+</BODY>
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>
+

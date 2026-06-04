@@ -1,0 +1,13 @@
+Title: Cost-Effective Switching Fabrics with Distributed Control for Scalable Routers
+
+Authors: Nian-Feng Tzeng  and  Malcolm Mandviwalla
+
+	Center for Advanced Computer Studies
+	University of Louisiana at Lafayette
+	Lafayette, LA  70504, USA
+
+
+Abstract
+
+This paper deals with scalable switching fabrics for high-performance routers with large numbers of ports for connecting external links operating at various speeds to arrive at aggregate rates up to multi-terabits per second. The proposed switching fabrics employ no centralized scheduling and consist of small routing units (RU’s), which are interconnected by multistage-based connecting components (CC’s) in accordance with grid structures, with routing decisions made by RU’s and CC’s individually in a simple, distributed manner. They are referred to as grid-oriented, multistage-connected RU’s, dubbed GMR.  With distributed routing, GMR enjoys good scalability and low hardware complexity.  It is found, based on our extensive simulation, that GMR outperforms not only their crossbar counterparts for small sizes, but also their compatible designs aiming at large sized construction (built from multiple stages of small crossbars), despite its lower hardware complexity. Two types of chips are sufficient to permit any sized construction; one for RU’s and another for CC’s.  The proposed switching fabrics are cost-effective, readily suitable for scalable routers 
+

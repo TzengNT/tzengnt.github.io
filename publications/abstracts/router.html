@@ -1,0 +1,112 @@
+<TITLE>DSM</TITLE>
+<P>
+<h1>
+Scalable Routers
+</h1>
+<BODY>
+<P>
+<b>Nian-Feng Tzeng</b>
+<br>
+Center for Advanced Computer Studies
+<br>
+University of Louisiana at Lafayette
+<P>
+Distributed Shared Memory (DSM) Systems build the shared memory abstract on top of the distributed memory machines, such that the users
+have a shared-memory environment while message passing are taking care of by the DSM layer. The synchronization mechanism is used for
+protecting the shared variables from <em>data race</em> situation, which leads to an unpredictable result due to multiple accesses. 
+Since performance of DSM is based on the number of messages exchanged during the runtime and synchronization mechanism is accounted for most of the messages, the efficient synchronization mechanism should help us further the performance.
+<P>
+In order to observe the actual behaviors of our proposed synchronization techniques, we used the Network of Workstations (NOW) and
+Massively Parallel Processor (MPP) system as the platforms for our experiments. The MPP system used in our works is the IBM SP machine
+provided by <a href="http://www.mcs.anl.gov">Mathematics and Computer Science Division at Argonne National Laboratory</a>.
+<P>
+While software DSM continues to improve its performance and scalability,
+the probability of system failures increases as its size grows.
+It is highly desirable to develop effective mechanisms for supporting
+fast crash recovery from node failures, giving rise to recoverable software DSM.
+We have proposed efficient logging and recovery protocols for software DSM,
+such that they incur negligible overhead during fault-free execution
+while shortening the recovery time significantly after failures arise.
+<P>
+<H2>Publications</H2>
+<UL>
+<LI>S. S. Fu and N.-F. Tzeng,
+    <B>Lock Improvement Technique for Release Consistency in Distributed
+       Shared Memory Systems</B>,
+       <I>Proc. 6th Symp. on the Frontiers
+       of Massively Parallel Computation</I>, pp. 255-262, October 1996.
+    <A HREF="./frontiers96.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/frontiers96.ps.Z">
+    compressed postscript (86.3K)</A>.
+<P>
+<LI>S. S. Fu, N.-F. Tzeng, and Z. Li,
+    <B>Empirical Evaluation of Distributed Mutual Exclusion Algorithms</B>,
+       <I>Proc. 11th Int'l Parallel Processing Symposium</I>, pp. 255-259, April 1997.
+    <A HREF="ipps97.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/ipps97.ps.Z">
+    compressed postscript (97.2K)</A>.
+<P>
+<LI>S. S. Fu and N.-F. Tzeng,
+    <B>Aggressive Release Consistency for Software Distributed Shared
+       Memory</B>,
+       <I>Proc. 17th Int'l Conf. Distributed Computing Systems</I>, pp. 288-295, May 1997.
+    <A HREF="icdcs97.html">
+    Abstract</A>,
+    <A HREF="http://www.cacs.usl.edu/~tzeng/publications/papers/icdcs97.ps.Z">
+    compressed postscript (101.2K)</A>.
+<P>
+<LI>N.-F. Tzeng and A. Kongmunvattana, <b>Distributed Shared Memory Systems with Improved Barrier Synchronization and Data Transfer</b>,
+	<I>Proc. 11th ACM Int'l Conf. on Supercomputing (ICS)</I>, pp. 148-155, July 1997.
+    <A HREF="ics97.html">
+    Abstract</A>,
+    <A HREF="../publications/papers/ics97.pdf.gz">
+	compressed PDF (1.1M)</A>.
+
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Lazy Logging and Prefetch-Based Crash Recovery in Software Distributed Shared Memory Systems</b>,
+	<I>Proc. 13th Int'l Parallel Processing Symp.  (IPPS '99)</I>, pp. 399-406, Apr. 1999.
+    <A HREF="http://computer.org/conferen/proceed/ipps/0143/01430399abs.htm">
+    Abstract</A>,
+    <a href="http://dlib.computer.org/conferen/ipps/0143/pdf/01430399.pdf">
+    PDF</A>.
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Coherence-Centric Logging and Recovery for Home-Based Software Distributed Shared Memory</b>,
+	<I>Proc. 1999 Int'l Conf. Parallel Processing (ICPP '99)</I>, pp. 274-281, Sept. 1999.
+    <A HREF="http://www.computer.org/conferen/proceed/icpp/0350/03500274abs.htm">
+    Abstract</A>,
+    <a href="http://dlib.computer.org/conferen/icpp/0350/pdf/03500274.pdf">
+    PDF</A>.
+<P>
+<LI>A. Kongmunvattana and N.-F. Tzeng, <b>Logging and Recovery in Adaptive Software Distributed Shared Memory Systems</b>,
+	<I>accepted for presentation in 18th IEEE Symp. Reliable Distributed Systems (SRDS)</I>, pp. 202-211, Oct. 1999.
+    <A HREF="http://www.computer.org/conferen/proceed/srds/0290/02900202abs.htm">
+    Abstract</A>,
+    <a href="http://dlib.computer.org/conferen/srds/0290/pdf/02900202.pdf">
+    PDF</A>.
+<P>
+<LI>A. Kongmunvattana, S. Tanchatchawal, and N.-F. Tzeng, <b>Coherence-Based Coordinated Checkpointing for Software Distributed Shared Memory Systems</b>,
+	<I>Proc. 20th Int'l Conf. Distributed Computing Systems (ICDCS 2000)</I>, pp. 556-563, Apr. 2000.
+    <A HREF="http://www.computer.org/conferen/proceed/icdcs/0601/06010556abs.htm">
+    Abstract</A>,
+    <a href="http://dlib.computer.org/conferen/icdcs/0601/pdf/06010556.pdf">
+    PDF</A>.
+</UL>
+<P>
+<h2>Funding</h2>
+<UL>
+<LI>National Science Foundation under Grants MIP-9201308, CCR-9300075,
+</A> <a href="http://www.interact.nsf.gov/cise/abst.nsf/Pages/CC72B512D2BE91E085256A6B007CDC8A">CCR-9803505</A>, and
+</A> <a href="http://www.interact.nsf.gov/cise/abst.nsf/Pages/F216107E2BE24C5185256A6B007CE24D">EIA-9871315</A>.
+<LI>Board of Regents, State of Louisiana under Contract No. LEQSF(1998-99)-ENH-TR-101.
+</UL>
+<HR>
+<A HREF="../index.html">
+    Back to Tzeng's home page</A>
+<P>
+</BODY>
+<ADDRESS> Send e-mail to:
+<A HREF="mailto:tzeng@cacs.louisiana.edu">tzeng@cacs.louisiana.edu</A>
+</ADDRESS>
+

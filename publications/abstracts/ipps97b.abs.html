@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>ABSTRACT</TITLE>
+</HEAD>
+<h1>Barrier Synchronization and Data Movement Reduction in Distributed Shared Memory Systems</h1>
+<BODY>
+<P>
+Abstract -- This paper introduces an effective approach for barrier
+synchronization in the distributed shared memory (DSM) systems under release
+consistency. The proposed approach is based on a binomial spanning tree and
+is aimed to reduce network contention and to maximize parallelism in the
+barrier release process. It gives rise to reduction in the total number of
+messages transmitted over the network, because reduced contention and faster
+barrier release lower the number of retransmitted messages. This reduction
+translates to performance improvement, and the degree of improvement increases
+quickly as the number of participants grows. A technique for reducing the
+data movement amount is also presented to eliminate many cold misses in
+TreadMarks, the best know software-based DSM. We incorporated the proposed
+barrier approach and the data movement reduction technique in TreadMarks for
+evaluation using four benchmark programs on a network of workstations. The
+IBM SP machine at Argonne National Laboratory is also employed to evaluate
+the proposed barrier approach when more participants are involved in the
+barrier. Experimental results are gathered and demonstrated.
+<P>
+Index Terms -- barrier synchronization, cold misses, distributed shared memory, memory consistency, message transmission,
+network contention, networks of workstations, spanning trees.
+</BODY>
+</HTML>
