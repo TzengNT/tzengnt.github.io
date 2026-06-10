@@ -1,36 +1,119 @@
-<html>
-<header>
-<title>Abstract</title>
-</header>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>PREFER: Precise Regional Forecasting via Intelligent and Rapid Harnessing</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./assets/bootstrap-4.5.3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Google icon -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Our CSS -->
+	<link href="prefer.css" rel="stylesheet">
+</head>
+
 <body>
-<center> 
-<H2>Lock Improvement Technique for Release Consistency in Distributed Shared Memory Systems</H2>
-<P>
-<H3>Shiwa S. Fu and Nian-Feng Tzeng</H2>
-<H3>Center for Advanced Computer Studies<br>
-    University of Southwestern Louisiana<br>
-    Lafayette, LA 70504<br></H2>
-</center> 
+	<div id="container-background">
 
-<P>
-<B> Abstract </B>- Distributed shared memory allows processes to view the physically
-distributed memory as a globally shared virtual memory. Lazy release
-consistency (LRC), among known techniques, is an efficient software
-model proposed for distributed shared memory. It relies heavily on lock
-synchronization to maintain data coherency. The lock scheme used in LRC,
-however, conducts many interrupt invocations on the remote processors,
-which in turn steal effective cpu cycles from remote processors, thus
-prolonging the lock acquisition time and the total elapsed time of
-application programs. In this paper, a lock improvement technique is
-proposed to alleviate interrupt invocations caused by the lock acquire
-operations, leading to reduction in the lock acquisition time and the
-overall program execution time. Our improvement technique was evaluated
-under the TreadMarks' framework using four applications, where
-TreadMarks is a distributed shared memory system based on LRC. The
-experimental results indicate that our technique improves the lock
-acquisition time over TreadMarks on a network of workstations by more
-than 14% for one application.
-<P>
+	<div class="sticky-top d-flex flex-column flex-md-row align-items-center bg-light p-4 border-bottom shadow-sm">
+		<h5 class="mr-md-auto font-weight-normal text-darkRed">PREFER: Precise Regional Forecasting via Intelligent and Rapid Harnessing</h5>
+		<nav class="mr-md-3">
+			<a class="p-2" href="index.html">Home</a>
+			<a class="p-2" href="description.html">Description</a>
+			<a class="p-2" href="news.html">News</a> 
+			<a class="p-2" href="participants.html">Participants</a>
+			<a class="p-2" href="publications.html">Publications</a>
+			<a class="p-2" href="funding.html">Funding</a>
+		</nav>
+	</div>
 
+	<!-- Content part -->
+	<div class="py-5 mx-auto text-center" style="max-width: 60%;">
+		<h1 class="display-4 text-darkRed">PREFER</h1>
+		<p class="lead">This NSF-funded project (<a class="prefer-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2019511" target="_blank">OIA-2019511</a>) addresses precise regional forecasting via intelligent and rapid harness on national scale hydrometeorological Big Data, for better numerical models on weather and climate parameters to improve forecasting accuracy.</p>
+	</div>
+
+	<div class="container">
+		<div class="card-deck">
+
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header d-flex align-items-end">
+					<i class="material-icons text-darkRed">article</i>
+					<h4 class="pl-2">Project Description</h4>
+				</div>
+				<div class="card-body">
+					<p class="card-text">Project scope overview, high-level design description, and key methodologies</p>
+				</div>
+				<div class="card-footer text-right">
+					<a href="description.html" class="btn btn-danger btn-sm">Learn more</a>
+				</div>
+			</div>
+
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header d-flex align-items-end">
+					<i class="material-icons text-darkRed">rss_feed</i>
+					<h4 class="pl-2">News</h4>
+				</div>
+				<div class="card-body">
+					<p class="card-text">News on project activities and achievements</p>
+				</div>
+				<div class="card-footer text-right">
+					<a href="news.html" class="btn btn-danger btn-sm">Learn more</a>
+				</div>
+			</div>
+
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header d-flex align-items-end">
+					<i class="material-icons text-darkRed">people</i>
+					<h4 class="pl-2">Participants and Plan</h4>
+				</div>
+				<div class="card-body">
+					<p class="card-text">Project investigators and their involvement, and strategic plan</p>
+				</div>
+				<div class="card-footer text-right">
+					<a href="participants.html" class="btn btn-danger btn-sm">Learn more</a>
+				</div>
+			</div>
+
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header d-flex align-items-center">
+					<i class="material-icons text-darkRed">star_outline</i>
+					<h4 class="pl-2">Publications and Software</h4>
+				</div>
+				<div class="card-body">
+					<p class="card-text">Technical publications and software products</p>
+				</div>
+				<div class="card-footer text-right">
+					<a href="publications.html" class="btn btn-danger btn-sm">Learn more</a>
+				</div>
+			</div>
+
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header d-flex align-items-end">
+					<i class="material-icons text-darkRed">account_balance</i>
+					<h4 class="pl-2">Funding</h4>
+				</div>
+				<div class="card-body">
+					<p class="card-text">Current funding sources of project activities</p>
+				</div>
+				<div class="card-footer text-right">
+					<a href="funding.html" class="btn btn-danger btn-sm">Learn more</a>
+				</div>
+			</div>
+
+			<!-- Empty Placebo Cards -->
+			<div class="card" style="visibility: hidden;"></div>
+			<div class="card" style="visibility: hidden;"></div>
+
+		</div>
+	</div>
+
+	<!-- Footer part -->
+	<hr class="mt-5 w-75 border-bottom shadow-sm">
+	<p class="py-5 mx-auto text-center">University of Louisiana at Lafayette, 104 East University Avenue, Lafayette, LA 70503-2014.  Ph. (337)482-6304</p>
+</div>
 </body>
 </html>
