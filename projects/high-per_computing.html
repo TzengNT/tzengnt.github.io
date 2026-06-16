@@ -275,6 +275,94 @@ using <i>all</i> disjoint paths from a subcube to its target subcube
 so as to achieve compaction at the fastest pace.
 This way accomplishes compaction in a fraction of the time needed with single paths.
 
+<P>
+<li><font size="+1" color="#ff0000"><i>Software-Based Reconfiguration and Fault Recovery</i></font> <br>
+A hypercube may operate in a gracefully degraded manner after faults arise,
+by supporting the execution of parallel algorithms in smaller fault-free subcubes.
+An efficient procedure capable of determining all complete fault-free subcubes
+in a faulty hypercube has been introduced,
+based on interesting properties of faulty hypercubes
+to exhibit empirically polynomial time complexity.
+It can deal with node failures and link failures uniformly and equally efficiently.
+
+<P>
+Reconfiguring a faulty hypercube with an effort to keep as many
+fault-free nodes as possible has been treated for the first time by us.
+This often leads to an incomplete hypercube, whose size can be arbitrary
+and is often much larger than a reconfigured complete subcube.
+Different approaches to this maximum reconfiguration have been proposed.
+One approach is to identify maximum collections of complete subcubes of
+distinct sizes such that elements in each collection together
+form an incomplete cube.
+Another is able to recognize all maximum incomplete subcubes existing
+in a faulty hypercube, based on boolean expression manipulation.
+It is confirmed by fault simulation that thess proposed approaches
+indeed give rise to significantly larger reconfigured systems.
+Maximum reconfiguration of faulty meshes by retaining as many healthy nodes
+as possible has been considered as well.
+Such a reconfigured subsystem is convex so that a simple,
+deadlock-free routing algorithm exists in it.
+This reconfiguration is shown to require a channel width of two only,
+keeping hardware overhead low.
+
+<P>
+Rollback and recovery strategies have been widely used in several software
+systems to improve reliability through fault tolerance.
+Efficient solutions to the problem of selecting recovery points optimally
+have been developed, with time complexity of O(<i>N*N</i>),
+where <i>N</i> is the number of tasks
+(while previously reported procedures have exponential time requirements).
+These solutions are aimed at computation models in which task precedence
+has a tree structure and a task may fail due to the presence of faults.
+
+<P>
+<li><font size="+1" color="#ff0000"><i>Reliable System Architecture</i></font> <br>
+The cube-connected cycles (CCC) architecture is an attractive parallel
+computation network, because it is suitable for VLSI implementation while
+preserving all the desired features of hypercubes.
+Different fault-tolerant CCC structures have been proposed,
+which exhibit significant reliability improvement and compare favorably
+to earlier known designs.
+Reconfiguration processes in these structures are simple and
+can be performed in a distributed manner in response to operational faults.
+The layouts of these designs are discussed and their area overheads are
+small to moderate at most.
+
+<P>
+The butterfly distributed-memory system has a regular and simple interconnection
+pattern, making it suitable for VLSI/WSI implementation.
+Effective fault-tolerant techniques for butterfly distributed-memory systems
+have been introduced to ensure their rigid full butterfly structures
+in the presence of failures.
+The reliability and layout of these proposed designs are evaluated analytically,
+and they are shown to be superior to those of prior fault-tolerant approaches.
+
+<p>
+<li><font size="+1" color="#ff0000"><i>Fault-Tolerant Interconnections</i></font> <br>
+Multiprocessor design demands a suitable interconnection network.
+A conventional multisage interconnection network (MIN) has one single path
+between a pair of input-output pairs, and a failure at the network
+may render several outputs inaccessible from certain inputs,
+possibly exhibiting low reliability.
+One scheme has been introduced for a wide class of MINs to enhance
+their reliability values by producing multiple paths between
+every input-output pair.
+The scheme connects switching elements within the same stage together,
+requiring a simple self-routing algorithm and making the network
+more robust as its size grows.
+An reliability analysis reveals that this fault-tolerant scheme
+leads to higher reliability improvement than other methods.
+
+<P>
+The Gamma interconnection network (GIN) is composed of 3 <i>x</i> 3 switches.
+We considered modifications to the GIN by altering the interconnection patterns
+between stages so as to create disjoint paths between every input-output pair,
+arriving at high terminal reliability.
+A modified GIN maintains the same routing complexity but enjoys a lower
+layout area and pin count, leading to potential cost reduction.
+It is shown that a modified GIN presents dramatic reliability improvement and
+possesses virtually identical communication performance as the original GIN.
+
 </UL>
 <BR>
 	
