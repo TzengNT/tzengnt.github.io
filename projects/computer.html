@@ -90,8 +90,74 @@ a reconfigured incomplete subcube using the Intel <i>iPSC#/860</i>.
 This is the first experimental study of incomplete hypercubes.
 Each application is mapped onto the incomplete hypercube,
 with load balance and minimum communication overhead in mind.
-
 </UL>
+
+<P>
+<h2>
+Grid Computing
+</h2>
+With large-scale resource sharing, grid computing has changed the way we handle computation and data storage, potentially enabling us to better tackle computationally intensive tasks and storage-demanding applications.
+A computational grid often consists of diverse resources aggregated together, and it naturally faces various technical challenges, including resource tracking and management, job assighments and task migration, security, and user interfaces & tools.
+We have dealt with real-time job scheduling and effective resource tracking & management for grid computing.
+Checkpointing and task migration in computational grids are being investigated.
+<br><br><br>
+
+<h2>
+Cluster Computing
+</h2>
+<P>
+Networks of workstations (NOWs) and massively parallel processor (MPP) systems
+are popular platforms for cluster computing.  They mostly belong to the class
+of distributed memory machines.
+Distributed Shared Memory (DSM) Systems build the shared memory abstract on top of the distributed memory machines, such that the users
+have a shared-memory environment while message passing are taken care of
+by the DSM layer.
+Performance and reliability improvement of software DSM on NOWs and MPP
+systems for cluster computing has been investigated.
+<br><br>
+<UL>
+<li><font size="+1" color="#ff0000"><i>Software DSM Performance Improvement</i></font> <br>
+Software DSM performance is particularly sensitive to message communication
+overhead incurred for memory coherence enforcement.
+An aggressive release consistency method was considered to reduce this overhead.
+It was found to achieve considerable overhead reduction through a real
+implementation of the considered method on the TreadMarks framework for
+detailed and thorough evaluation under different applications.
+The synchronization mechanism is used for protecting the shared variables
+from <em>data race</em> situation, which leads to an unpredictable result
+due to multiple accesses. 
+Since performance of DSM is based on the number of messages exchanged
+during the runtime and synchronization mechanism is accounted for
+most of the messages, efficient synchronization mechanisms
+help further overall performance, as revealed and detailed in our studies.
+<P>
+In order to observe the actual behaviors of our proposed
+synchronization techniques, we used NOWs and an MPP system as the platforms
+for our experiments. NOWs employed for study are housed in the
+<a href="../lab.html"> CAN</a> Lab.
+The MPP system used in our works is the IBM SP machine provided by
+Mathematics and Computer Science Division at Argonne National Laboratory</a>.
+<P>
+<li><font size="+1" color="#ff0000"><i>Recoverable Software DSM</i></font> <br>
+While software DSM continues to improve its performance and scalability,
+the probability of system failures increases as its size grows.
+It is highly desirable to develop effective mechanisms for supporting
+fast crash recovery from node failures, giving rise to recoverable software DSM.
+We have proposed efficient logging and recovery protocols for software DSM,
+such that they incur negligible overhead during fault-free execution
+while shortening the recovery time significantly after failures arise.
+<P>
+A new and efficient coordinated checkpointing technique was introduced for
+software DSM, in order to minimize both the checkpointing overhead during
+failure-free execution, and the cost of recovery from failures.
+This is realized by leveraging existing coherence information maintained by
+software DSM, so as to allow failure recovery from the most recent checkpoint,
+saving the re-computation time.
+Performance experiments on NOWs with the introduced technique incorporated
+into the TreadMarks framework have demonstrated its ability in consistently
+outperforming other checkpointing and fault recovery approaches.
+</UL>
+	
 <BR>
 <H2>Publications</H2>
 <UL>
