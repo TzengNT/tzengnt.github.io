@@ -45,7 +45,15 @@ without high overhead to ensure good performance.
 COMEX design was realized by modifying Linux kernel 3.10.87 to manage page eviction to, and fetches from, remote memory based on the page table in the host node.
 Its specific kernel rectification included the page frame reclaiming module and three added functions to manage
 (1) COMEX memory pages, (2) RDMA connections, and (3) DRMA page data transfer, respectively.
-<P>
+The evaluation results of our prototyped COMEX indicated that the percentage typically fluctured as
+executions progressed, with many benchmarks exhibiting high percentages for most
+of the times (e.g., Canneal under the PARSEC benchmark suite ), while some had
+low percentages (e.g., Fluidanimate under the PARSEC benchmark suite) or were
+subject to wide swings in the percentage (e.g., Hardoop-Wiki under the CloudSuite benchmark).
+<P>	
+<li><font size="+1" color="#ff0000"><i>Execution Checkpointing</i></font> <br></i></font> <br>
+
+<p>
 <li><font size="+1" color="#ff0000"><i>Grid Computing</i></font> <br>
 With large-scale resource sharing, grid computing has changed the way we handle computation and data storage, potentially enabling us to better tackle computationally intensive tasks and storage-demanding applications.
 A computational grid often consists of diverse resources aggregated together, and it naturally faces various technical challenges, including resource tracking and management, job assighments and task migration, security, and user interfaces & tools.
