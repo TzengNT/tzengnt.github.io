@@ -16,6 +16,16 @@ University of Louisiana at Lafayette
 </CENTER>
 <br>
 <P>
+A networked computing system can establish immense memory collectively across its connected nodes
+for holding pages evicted from the main memory of any participating node during application runs with large working sets. 
+Such cooperative memory expansion (COMEX) may boost process execution performance tremendously, 
+likely to yield far higher job throughputs for data centers and enterprise computing facilities,
+resulting from holding the huge working set of an execution process via established immense physical memory.
+We designed, implemented, evaluated, and prototyped COMEX for real assessment on its performance gain potentials under various benchmarks. 
+<P>
+	
+
+<P>
 The performance of a shared-memory multiprocessor is dictated in part by the
 latency of fetching global memory locations through the interconnection network.
 We investigated techniques to improve access latency
@@ -28,9 +38,14 @@ have been considered, as an efficient lock makes it feasible to
 construct DSM systems on top of the distributed-memory machines,
 by enforcing data coherence
 without high overhead to ensure good performance. 
-
 <br><br>
+	
 <UL>
+<li><font size="+1" color="#ff0000"><i>Cooperative Memory Expansion</i></font> <br></i></font> <br>
+COMEX design was realized by modifying Linux kernel 3.10.87 to manage page eviction to, and fetches from, remote memory based on the page table in the host node.
+Its specific kernel rectification included the page frame reclaiming module and three added functions to manage
+(1) COMEX memory pages, (2) RDMA connections, and (3) DRMA page data transfer, respectively.
+<P>
 <li><font size="+1" color="#ff0000"><i>Grid Computing</i></font> <br>
 With large-scale resource sharing, grid computing has changed the way we handle computation and data storage, potentially enabling us to better tackle computationally intensive tasks and storage-demanding applications.
 A computational grid often consists of diverse resources aggregated together, and it naturally faces various technical challenges, including resource tracking and management, job assighments and task migration, security, and user interfaces & tools.
