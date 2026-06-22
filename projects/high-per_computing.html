@@ -23,8 +23,13 @@ likely to yield far higher job throughputs for data centers and enterprise compu
 resulting from holding the huge working set of an execution process via established immense physical memory.
 We designed, implemented, evaluated, and prototyped COMEX for real assessment on its performance gain potentials under various benchmarks. 
 <P>
-	
-
+A graphic processing unit (GPU) may underutilize its physical memory during lengthy machine learning (ML) model training or deep learning (DM).
+We explored an effective approach that lets memory-intensive applications run on the host machine CPU with its memory expanded dynamically
+onto available GPU on-board DRAM.
+Our approach permited speedy executions on CPU with large memory footprints by harvesting unused GPU on-board memory on-demand for swapping.
+It was implemented in user space as a prototype that lets GPU memory house swapped-out memory pages transparently,
+without code modifications for high usability and portability.
+Evaluating NAS-NPB benchmark applications on the prototype demonstrated considerable speedups under both monotasking and multitasking.
 <P>
 The performance of a shared-memory multiprocessor is dictated in part by the
 latency of fetching global memory locations through the interconnection network.
