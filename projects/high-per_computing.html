@@ -23,14 +23,6 @@ likely to yield far higher job throughputs for data centers and enterprise compu
 resulting from holding the huge working set of an execution process via established immense physical memory.
 We designed, implemented, evaluated, and prototyped COMEX for real assessment on its performance gain potentials under various benchmarks. 
 <P>
-A graphic processing unit (GPU) may underutilize its physical memory during lengthy machine learning (ML) model training or deep learning (DM).
-We explored an effective approach that lets memory-intensive applications run on the host machine CPU with its memory expanded dynamically
-onto available GPU on-board DRAM.
-Our approach permited speedy executions on CPU with large memory footprints by harvesting unused GPU on-board memory on-demand for swapping.
-It was implemented in user space as a prototype that lets GPU memory house swapped-out memory pages transparently,
-without code modifications for high usability and portability.
-Evaluating NAS-NPB benchmark applications on the prototype demonstrated considerable speedups under both monotasking and multitasking.
-<P>
 The performance of a shared-memory multiprocessor is dictated in part by the
 latency of fetching global memory locations through the interconnection network.
 We investigated techniques to improve access latency
@@ -56,7 +48,15 @@ of the times (e.g., Canneal under the PARSEC benchmark suite ), while some had
 low percentages (e.g., Fluidanimate under the PARSEC benchmark suite) or were
 subject to wide swings in the percentage (e.g., Hardoop-Wiki under the CloudSuite benchmark).
 <P>	
-	
+A graphic processing unit (GPU) may underutilize its physical memory during lengthy machine learning (ML) model training or deep learning (DM).
+We explored an effective approach that lets memory-intensive applications run on the host machine CPU with its memory expanded dynamically
+onto available GPU on-board DRAM.
+Our approach permited speedy executions on CPU with large memory footprints by harvesting unused GPU on-board memory on-demand for swapping.
+It was implemented in user space as a prototype that lets GPU memory house swapped-out memory pages transparently,
+without code modifications for high usability and portability.
+Evaluating NAS-NPB benchmark applications on the prototype demonstrated considerable speedups under both monotasking and multitasking.
+
+<p>
 <li><font size="+1" color="#ff0000"><i>Reliable Computing Systems</i></font> <br></i></font> 
 
 While software DSM continues to improve its performance and scalability,
@@ -381,7 +381,14 @@ This way accomplishes compaction in a fraction of the time needed with single pa
 	
 <H2>Publications</H2>
 <UL>
+
 	
+<P>
+<LI>T. LeCompte, L. Peng, X. Yuan, and N.-F. Tzeng, 
+	  <b>Protecting Synchronization Mechanisms of Parallel Big Data Kernels via Logging,</b>
+	  <i>IEEE Transactions on Computers</b></i>, Vol. 71, No. 9, pp. 2156 - 2162, 
+	  <a target="_blank" href="https://ieeexplore.ieee.org/document/9591484">September 2022</a>, 
+	  <a target="_blank" href="https://prefer-nsf.org/pdf/Synchronization_TC 2022.pdf"> PDF (1,820 KB)</a>.
 <P>
 <LI>P. Srinuan, P. Sigdel, L. Peng, X. Yuan, P. Darby, C. Aucoin, and N.-F. Tzeng, <b>GPU-Assisted Memory Expansion,</b>
 	 <i>Proceedings of 15th International Conference on Networking, Architecture, and Storage (NAS 2021)</i>, October 2021, pp. 132-139.
