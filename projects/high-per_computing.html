@@ -58,13 +58,19 @@ Evaluating NAS-NPB benchmark applications on the prototype demonstrated consider
 
 <p>
 <li><font size="+1" color="#ff0000"><i>Reliable Computing Systems</i></font> <br></i></font> 
+Best checkpointing control realizable in real-world large computer systems is developed, via equating aggregate checkpointing overhead over an activity sequence of interest (<b>θ</b>)
+and the expected rework amount after a failure recovery for best checkpointing.
+The developed control lets its inter-checkpoint intervals in <b>θ</b> follow a pre-determined sequence independent of mean time between failure (MTBF) to 
+aim at performance optimality and is shown analytically to keep overall execution time overhead upper bounded.
+It can be further enhanced to lower checkpointing overhead by skipping certain checkpoints at the beginning of each <b>θ</b> before taking checkpoints 
+with the most desirable inter-checkpoint intervals determined on-the-fly for best checkpointing control.
+<P>
 Large-scale applications are normally parallel in nature and rely on control structures tailored specifically for parallel computing, 
 such as locks and barriers.
 We devise a method of ensuring the correct operation of both locks and barriers in parallel applications. 
 It tracks the memory locations used within parallel sections and detects a violation of the control structures. 
 Upon detecting any violation, the violating thread is rolled back to the beginning of the structure and
-reattempts it, found to exhibit a mean error reduction of 93.6% for basic mutex locks and barriers in the BigDataBench kernels.  
-	
+reattempts it, found to exhibit a mean error reduction of 93.6% for basic mutex locks and barriers in the BigDataBench kernels.  	
 <p>
 While software DSM continues to improve its performance and scalability,
 the probability of system failures increases as its size grows.
