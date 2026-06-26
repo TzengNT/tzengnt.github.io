@@ -194,7 +194,6 @@ has been proposed.
 It can be implemented efficiently through simple operations,
 with its search space determined by both the hypercube dimension and
 the size of the subcube needed by an incoming task.
-
 <P>
 The mesh system is suitable for the parallel execution of various algorithms.
 A few schemes for recognizing submeshes in a mesh-connected system
@@ -207,7 +206,6 @@ assign a submesh of the precise size to an incoming task.
 It leads to significant improved performance over
 the previous submesh allocation scheme,
 while maintaining reasonably low time complexity.
-
 <P>
 Multiple copies of a certain resource (e.g., I/O processors, disks,
 compilers, etc.) often exist in the distributed memory machine to
@@ -224,7 +222,6 @@ access contention for a given number of resource copies (i.e., cost).
 The locations to place resource copies are specified by the codewords of
 an appropriate multiple-adjacency linear code constructed according to
 the degree of adjacency and the hypercube dimension.
-
 <P>
 A performance measure of interest in resource placement is
 the <i>resource diameter</i>, which is defined as the maximum resource distance
@@ -237,35 +234,6 @@ aid in constructing desired linear codes whose codewords address nodes
 at which resource copies are placed.
 They are applicable to any cube size systematically and
 achieve placement results better than what are derived by previous methods.
-
-<P>
-<li><font size="+1" color="#ff0000"><i>Incomplete Hypercubes</i></font> <br>
-The hypercube restricts its size rigidly to be a power of 2,
-leaving a large gap between consecutive allowable system sizes.
-A variant hypercube whose size can be arbitrary, called an
-<i>incomplete hypercube</i>, possesses many advantages of complete hypercubes.
-Traffic density over links in an incomplete hypercube has been analyzed under
-uniform message distributions and found to be bounded by a constant 2,
-independent of the system size and despite its structural non-homogeneity.
-This result is interesting because it implies that cube links can be easily
-constructed so as to avoid any single point of congestion,
-guaranteeing good performance.
-Incomplete hypercube performance was also evaluated by simulation
-under packet-switching and wormhole routing with the queueing delay
-taken into account.
-Simulation results indicate that mean latency for transmitting messages is
-roughly the same in an incomplete hypercube as
-in a compatible complete hypercube.
-
-<P>
-Embedding trees and grids in incomplete hypercubes was pursued as well.
-It is shown that better tree embedding results are often achievable in
-incomplete hypercubes than in compatible complete hypercubes.
-Likewise, superior embedding can be obtained in an incomplete hypercube
-than in its complete counterpart for an absolute majority of cases.
-Consequently, it is feasible and beneficial to reconfigure a faulty hypercube
-into an incomplete cube so as to retain as many healthy nodes as possible.
-The incomplete hypercube appears to be an attractive and practical topology.
 
 <P>
 <li><font size="+1" color="#ff0000"><i>Performance Improvement and Task Migration</i></font> <br>
