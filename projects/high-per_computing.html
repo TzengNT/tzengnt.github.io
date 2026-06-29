@@ -86,18 +86,12 @@ indeed give rise to significantly larger reconfigured systems for best retaining
 <P>
 Multiprocessor design demands a suitable interconnection network.
 A conventional multisage interconnection network (MIN) may render several outputs inaccessible from certain inputs, upon a single failure.
-We introduce different schemes for MINs to lift their reliability values, yielding higher reliability improvement than prior counterparts.		
-	
+We introduce different schemes for MINs to lift their reliability values, yielding higher reliability improvement than prior counterparts.			
+
 <P>	
-<li><font size="+1" color="#ff0000"><i>Cluster Computing</i></font> <br>
-Networks of workstations (NOWs) and massively parallel processor (MPP) systems
-are popular platforms for cluster computing.  They mostly belong to the class
-of distributed memory machines.
-Distributed Shared Memory (DSM) Systems build the shared memory abstract on top of the distributed memory machines, such that the users
-have a shared-memory environment while message passing are taken care of
-by the DSM layer.
-Performance and reliability improvement of software DSM on NOWs and MPP
-systems for cluster computing has been investigated.
+<li><font size="+1" color="#ff0000"><i>Scalable Shared and Distributed Memory Systems</i></font> <br>
+
+
 	
 <P>	
 <li><font size="+1" color="#ff0000"><i>Communication Improvement</i></font> <br>
@@ -105,179 +99,50 @@ One of the essential issues in developing large-scale shared-memory
 multiprocessors is to deal with hot spots, i.e., when a large number of
 processors attempt to access a common location, a significant delay results
 due to tree saturation developed in the interconnection network.
-An inexpensive software combining technique has been developed as an alternative
-to its expensive hardware counterpart by distributing hot-spot accesses
-over a software tree whose nodes are dispersed over many memory modules,
-effectively decreasing access contention
-to substantial overall performance improvement.
+Different techniques for the communication improvement of hot spot accesses have been developed to
+effectively alleviate access contention, yielding substantial overall performance improvement.
 <P>
-A cost-effective combining structure for large-scale multiprocessors is
-realized by making use of the idea that the combining function
-is separated from the routing function,
-so that a binary tree-based combining configuration becomes feasible.
-With a considerably lower cost, this considered combining structure
-is readily suitable for use in applications where hot-spot traffic
-can be differentiated from regular traffic at run time.
-An approach that provides good performance regardless of
-whether hotspot requests are combinable, is also proposed.
-It is based on multi-queues at network primary inputs and
-at switch inputs, which share a fixed amount of storage allocated
-such that each queue is given a slot permanently and
-also shares available storage with other queues in a switch dynamically.
-This design improves network bandwidth in the absence of hotspots
-and indeed alleviates the impact of tree saturation on regular requests.
-<P>
-<li><font size="+1" color="#ff0000"><i>Synchronization and Performance Assessment</i></font> <br>
 Implementing mutual exclusion in large-scale shared-memory multiprocessors
-requires the use of a lock in global memory, through which synchronization
-and data exchange are carried out.
-An effective lock implementation reduces the access latency of shared data
-and synchronization overhead, crucial to the performance of parallel execution.
+requires the use of a lock in global memory, through which synchronization and data exchange are carried out.
 An efficient lock scheme for multiprocessors interconnected by
 the multistage interconnection network has been introduced.
 It keeps synchronization traffic low and avoids serious hot-spot contention,
 reducing the latency of access to the lock.
-This is made possible by constructing a ring of the processors waiting for
-the critical section and by dispersing accesses to the lock.
 <P>
-Distributed-memory systems needs the use of locks for realizing synchronization
-during parallel program executions; for example, the barrier synchronization.
-When a distributed shared memory system is constructed on a distributed-memory
-machine, the data coherence is commonly enforced through
-mutual exclusion on the data cache lines of processors.
-An approach to mutual exclusion in the distributed memory system
-has been considered so that processors waiting for the critical section
-will get the permission quickly with as few message exchanges as possible,
-often exhibiting better performance than prior algorithms.
-It results in deadlock- and starvation-freeness naturally,
-and presents simple fault recovery without employing any time-out mechanism.
+A distributed-memory system needs the use of locks for realizing synchronization
+during parallel program executions.
+Its data coherence is commonly enforced through mutual exclusion on the data cache lines of processors.
+Approaches for mutual exclusion in the distributed memory system have been considered so that 
+processors waiting for the critical section will get the permission quickly with as few message exchanges as possible
+to lift better performance, while ensuring deadlock- and starvation-freeness naturally.
 <P>
-For a parallel machine, system performance tends to be in proportion to
-the computation power, which in turn is proportional to the system size.
-We measured the execution behaviors of four applications on
-a reconfigured incomplete subcube using the Intel <i>iPSC#/860</i>.
-This is the first experimental study of incomplete hypercubes.
-Each application is mapped onto the incomplete hypercube,
-with load balance and minimum communication overhead in mind.
-
-<P>
-<li><font size="+1" color="#ff0000"><i>Software DSM Performance Improvement</i></font> <br>
+Distributed Shared Memory (DSM) Systems build the shared memory abstract on top of the distributed memory machines, 
+such that the users have a shared-memory environment while message passing are taken care of by the DSM layer.
 Software DSM performance is particularly sensitive to message communication
 overhead incurred for memory coherence enforcement.
-An aggressive release consistency method was considered to reduce this overhead.
-It was found to achieve considerable overhead reduction through a real
-implementation of the considered method on the TreadMarks framework for
-detailed and thorough evaluation under different applications.
-The synchronization mechanism is used for protecting the shared variables
-from <em>data race</em> situation, which leads to an unpredictable result
-due to multiple accesses. 
 Since performance of DSM is based on the number of messages exchanged
-during the runtime and synchronization mechanism is accounted for
-most of the messages, efficient synchronization mechanisms
-help further overall performance, as revealed and detailed in our studies.
-<P>
-In order to observe the actual behaviors of our proposed
-synchronization techniques, we used NOWs and an MPP system as the platforms
-for our experiments. NOWs employed for study are housed in the
-<a href="../lab.html"> CAN</a> Lab.
-The MPP system used in our works is the IBM SP machine provided by
-Mathematics and Computer Science Division at Argonne National Laboratory</a>.
+during the runtime and the synchronization mechanism dictates the message count involved, 
+efficient synchronization mechanisms we considered arrive at improved overall system performance.
 
 <P>
 <li><font size="+1" color="#ff0000"><i>Resource Allocation and Management</i></font> <br>
-Multiple tasks can be executed simultaneously in a given message-passing system.
-To achieve good performance, the system has to recognize efficiently
-free subsystems of various sizes for incoming tasks.
-A subcube allocation strategy, which has much lower complexity
-than known methods while still achieving complete subcube recognition,
-has been proposed.
-It can be implemented efficiently through simple operations,
-with its search space determined by both the hypercube dimension and
-the size of the subcube needed by an incoming task.
-<P>
-The mesh system is suitable for the parallel execution of various algorithms.
-A few schemes for recognizing submeshes in a mesh-connected system
-have been considered, but they either lead to low processor utilization
-(because of large internal fragmentation) or
-cannot apply to general mesh systems.
-An efficient submesh allocation technique able to
-recognize submeshes with arbitrary sizes has been devised to
-assign a submesh of the precise size to an incoming task.
-It leads to significant improved performance over
-the previous submesh allocation scheme,
-while maintaining reasonably low time complexity.
-<P>
 Multiple copies of a certain resource (e.g., I/O processors, disks,
 compilers, etc.) often exist in the distributed memory machine to
 reduce access contention at any shared copy of the resource.
-Placing multiple copies of a resource in the hypercube has been considered
-such that every cube node without the resource is adjacent to
+Placing multiple copies of a resource in hypercubes we considered
+ensures that every cube node without the resource is adjacent to
 a specified number of resource copies using as few resource copies as possible.
 This placement guarantees the resource to be accessible from every node
 in one hop even after some resource copies are lost.
-The placement is done systematically for any hypercube,
-following the multiple-adjacency codes devised,
-particularly useful for large-scale hypercubes to yield lowest potential
+The placement is particularly useful for large-scale hypercubes to yield lowest potential
 access contention for a given number of resource copies (i.e., cost).
-The locations to place resource copies are specified by the codewords of
-an appropriate multiple-adjacency linear code constructed according to
-the degree of adjacency and the hypercube dimension.
 <P>
-A performance measure of interest in resource placement is
-the <i>resource diameter</i>, which is defined as the maximum resource distance
-among all the nodes, with the resource distance of a node being the minimum
-number of hops from the node to a node equipped with a copy of the resource.
-Placing copies of a certain resource to cube nodes under the situations
-that the resource diameter is greater than 1 has been dealt with,
-with approaches based on the covering radius results of known codes to
-aid in constructing desired linear codes whose codewords address nodes
-at which resource copies are placed.
+In addition, we pursued placing copies of a certain resource to cube nodes under the situations
+that the resource diameter is greater than 1.
+Our approaches adopt the covering radius results of known codes to aid in constructing desired linear codes 
+whose codewords address nodes at which resource copies are placed.
 They are applicable to any cube size systematically and
 achieve placement results better than what are derived by previous methods.
-
-<P>
-<li><font size="+1" color="#ff0000"><i>Performance Improvement and Task Migration</i></font> <br>
-Techniques for improving the performance of complete and incomplete hypercubes
-by utilizing otherwise unused links have been investigated.
-They include how to maximize the improvement of the performance measure of
-interest when extra connections are made, under various traffic distributions.
-The performance measures of interest include diameter, mean internode distance,
-and traffic density over links.
-For a complete hypercube, it is found that optimal skips would be between
-pairs of closer nodes if the degree of reference locality increases.
-There are numerous ways to make extra connections in an incomplete hypercube
-using otherwise unused links to improve its performance.
-A particular way of establishing extra connections has been considered and
-evaluated such that interesting path characteristics result,
-making it possible to develop a simple routing algorithm
-which takes the most advantage of extra connections
-and yet prevents traffic congestion and deadlock from arising.
-
-<P>
-A hypercube system often supports multi-tasking,
-by which several independent jobs can be executed simultaneously,
-one is assigned with one subcube.
-After repeated subcube allocation and deallocation in a hypercube,
-fragmentation tends to develop and cannot be eliminated without
-<i>task migration</i>, which is a process for relocating active tasks
-by migrating them to respective target subcubes
-so as to create a large free subcube.
-Speedy task migration in a hypercube system has been investigated
-by making use of two disjoint paths for delivering migration messages
-concurrently between every pair of corresponding nodes.
-All migration paths selected are pairwise disjoint and contain no link
-of active subcubes, so that task migration can be performed quickly and
-without interrupting the execution of other jobs.
-A highly fragmented hypercube may require <i>compaction</i>,
-which moves active tasks to a specified area such that all free nodes are
-at a contiguous region ready for upcoming jobs.
-An approach for compaction in a hypercube has been considered by
-using <i>all</i> disjoint paths from a subcube to its target subcube
-so as to achieve compaction at the fastest pace.
-This way accomplishes compaction in a fraction of the time needed with single paths.
-
-
-
 </UL>
 <BR>
 	
